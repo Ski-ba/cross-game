@@ -19,10 +19,15 @@ let valuesArr = [false,false,false,false,false,false,false,false,false]
 
 function win(value) {
   let bod = document.querySelector('.body')
+
   if(value == 'diamond') {
     bod.classList.add('green')
   } else {
     bod.classList.add('red')
+  }
+
+  for(let i = 0; i < buttons.length; i++) {
+    buttons[i].setAttribute("disabled", "disabled")
   }
 }
 
