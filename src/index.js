@@ -12,6 +12,7 @@ const heart = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 </svg>`
 
 const buttons = document.querySelectorAll('#button')
+const reset = document.getElementById('reset')
 let count = 0
 
 
@@ -66,3 +67,15 @@ for (let i = 0; i < buttons.length; i++) {
     }
   })
 }
+
+reset.addEventListener('click', () => {
+  let bod = document.body
+  bod.classList.remove('green')
+  bod.classList.remove('red')
+  valuesArr = [false,false,false,false,false,false,false,false,false]
+  for(let i = 0; i < valuesArr.length; i++) {
+    buttons[i].textContent = ''
+    buttons[i].removeAttribute('disabled')
+  }
+
+})
